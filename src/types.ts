@@ -18,25 +18,3 @@ export type TStore = {
   view: number;
   score: number;
 };
-
-export type TExperience = {
-  id: string;
-  title: string;
-  body: string;
-  score: number;
-  product: string;
-  orderDate: Date;
-  storeId: string;
-  createdAt: Date;
-};
-
-export type TError = {
-  message: string;
-  code: number;
-};
-
-export type TPageInfo = {
-  currentPage?: number | null;
-  pageSize?: number | null;
-  totalPages?: number | null;
-};

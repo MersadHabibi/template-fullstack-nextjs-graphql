@@ -1,3 +1,6 @@
+import createStoreMutation from "@/graphql/server/createStoreMutation";
+import { TGraphQLContext, TStore } from "@/types";
+import { GraphQLError } from "graphql";
 import {
   DateTimeResolver,
   PositiveFloatResolver,
@@ -13,19 +16,19 @@ const resolvers = {
 
   Query: {
     // EXAMPLE
-    // stores: async (_: any, args: {}, ctx: TGraphQLContext) => {
-    //   try {
-    //     return {};
-    //   } catch (error) {
-    //     throw new GraphQLError("سرور با مشکل مواجه شد! لطفا بعدا امتحان کنید", {
-    //       extensions: { code: 500 },
-    //     });
-    //   }
-    // },
+    stores: async (_: any, args: {}, ctx: TGraphQLContext) => {
+      try {
+        return { name: "" };
+      } catch (error) {
+        throw new GraphQLError("سرور با مشکل مواجه شد! لطفا بعدا امتحان کنید", {
+          extensions: { code: 500 },
+        });
+      }
+    },
   },
 
   Mutation: {
-    createStore: () => {},
+    createStore: createStoreMutation,
   },
 
   // EXAMPLE

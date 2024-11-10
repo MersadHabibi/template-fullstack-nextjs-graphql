@@ -1,6 +1,5 @@
 import { GraphQLError } from "graphql";
 
-import { PrismaClient } from "@prisma/client";
 import { TGraphQLContext } from "@/types";
 
 type createStoreInput = {
