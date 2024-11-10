@@ -1,0 +1,44 @@
+scalar DateTime
+scalar PositiveFloat
+scalar PositiveInt
+scalar URL
+
+type Pagination {
+  currentPage: Int
+  pageSize: Int
+  totalPages: Int
+}
+
+type Store {
+  id: ID!
+  name: String!
+  website: URL
+  telegram: String
+  instagram: String
+  activityField: String!
+  score: Float!
+  view: Int!
+  experiencesCount: Int!
+  createdAt: DateTime
+}
+
+type PaginationStores {
+  pageInfo: Pagination!
+  data: [Store]!
+}
+
+input createStoreInput {
+  name: String!
+  website: URL
+  telegram: String
+  instagram: String
+  activityField: String!
+}
+
+type Query {
+  stores(page: Int, pageSize: Int, search: String): PaginationStores!
+}
+
+type Mutation {
+  createStore(input: createStoreInput): Store
+}
