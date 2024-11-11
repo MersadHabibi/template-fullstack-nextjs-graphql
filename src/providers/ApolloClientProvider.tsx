@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 export default function ApolloClientProvider({
   children,

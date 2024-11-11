@@ -6,7 +6,6 @@ import {
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { PrismaClient } from "@prisma/client";
 import fs from "fs";
-
 import {
   DateTimeTypeDefinition,
   PositiveFloatTypeDefinition,

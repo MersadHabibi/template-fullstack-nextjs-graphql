@@ -4,10 +4,14 @@ import { TGraphQLContext } from "@/types";
 
 type createStoreInput = {
   name: string;
+  website: string;
+  telegram: string;
+  instagram: string;
+  activityField: string;
 };
 
 export default async function createStoreMutation(
-  _: any,
+  _: unknown,
   {
     input,
   }: {
@@ -23,7 +27,9 @@ export default async function createStoreMutation(
     });
 
     return store;
-  } catch (error) {
+
+    // eslint-disable-next-line
+  } catch (_) {
     throw new GraphQLError(
       "ساخت فروشگاه با مشکل مواجه شد! لطفا بعدا امتحان کنید",
       { extensions: { code: 500 } },
